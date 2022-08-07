@@ -8,7 +8,7 @@ Also, Java is widely used in many textbooks and training courses, thus more frie
 
 ## Algorithms
 
-1. The vanilla `fibonacci sequence`.
+1. vanilla [`fibonacci sequence`](./src/main/java/com/github/cuzfrog/fibonacci).
 
 # Author
 Cause Chung (cuzfrog@gmail.com)
