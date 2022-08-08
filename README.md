@@ -10,6 +10,7 @@ Also, Java is widely used in many textbooks and training courses, thus more frie
 
 1. [`fibonacci sequence`](./src/main/java/com/github/cuzfrog/fibonacci)
 2. [`matrix paths`](./src/main/java/com/github/cuzfrog/matrixpath)
+3. [`can sum`](./src/main/java/com/github/cuzfrog/cansum)
 
 # Author
 Cause Chung (cuzfrog@gmail.com)

@@ -18,7 +18,7 @@ class MatrixPathTest {
                 new ReduceMemMatrixPath(),
                 new ArrayMatrixPath()
         );
-    };
+    }
 
     @ParameterizedTest
     @MethodSource("impls")
