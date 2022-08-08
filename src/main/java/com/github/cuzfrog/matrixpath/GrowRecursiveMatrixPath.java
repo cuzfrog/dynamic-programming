@@ -1,6 +1,6 @@
 package com.github.cuzfrog.matrixpath;
 
-final class RecursiveMatrixPath implements MatrixPath {
+final class GrowRecursiveMatrixPath implements MatrixPath {
     @Override
     public int pathCount(int n) {
         return recurCnt(1, 1, n) + 1;

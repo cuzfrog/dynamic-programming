@@ -8,8 +8,8 @@ Also, Java is widely used in many textbooks and training courses, thus more frie
 
 ## Algorithms
 
-1. vanilla [`fibonacci sequence`](./src/main/java/com/github/cuzfrog/fibonacci)
-2. classic [`matrix paths`](./src/main/java/com/github/cuzfrog/matrixpath)
+1. [`fibonacci sequence`](./src/main/java/com/github/cuzfrog/fibonacci)
+2. [`matrix paths`](./src/main/java/com/github/cuzfrog/matrixpath)
 
 # Author
 Cause Chung (cuzfrog@gmail.com)

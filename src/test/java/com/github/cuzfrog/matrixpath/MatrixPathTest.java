@@ -1,9 +1,7 @@
 package com.github.cuzfrog.matrixpath;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
@@ -14,8 +12,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 class MatrixPathTest {
     static Stream<MatrixPath> impls() {
         return Stream.of(
-                new RecursiveMatrixPath(),
-                new MemMatrixPath(),
+                new GrowRecursiveMatrixPath(),
+                new GrowMemMatrixPath(),
+                new ReduceRecursiveMatrixPath(),
+                new ReduceMemMatrixPath(),
                 new ArrayMatrixPath()
         );
     };
