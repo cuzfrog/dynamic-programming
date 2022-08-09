@@ -12,7 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CanSumTest {
     static Stream<CanSum> impls() {
         return Stream.of(
-                new RecursiveCanSum()
+                new RecursiveCanSum(),
+                new MemCanSum()
         );
     }
 

@@ -17,12 +17,16 @@ final class IntBag {
         this.existence = Arrays.copyOf(existence, existence.length);
     }
 
-    int retrieve(int index) {
+    int borrowElem(int index) {
         if (existence[index]) {
             existence[index] = false;
             return values[index];
         }
         return -1;
+    }
+
+    void returnElem(int index) {
+        existence[index] = true;
     }
 
     int length() {

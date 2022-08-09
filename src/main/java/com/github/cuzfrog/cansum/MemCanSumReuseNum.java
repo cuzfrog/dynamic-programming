@@ -12,15 +12,15 @@ final class MemCanSumReuseNum implements CanSumReuseNum {
     private static boolean recurTest(int targetSum, int[] nums, IntSet mem) {
         if (targetSum == 0) return true;
         if (targetSum < 0) return false;
-        var res = mem.contains(targetSum);
-        if (res) {
-            return true;
+        if (mem.contains(targetSum)) {
+            return false;
         }
         for (int num : nums) {
             var residue = targetSum-num;
-            res = recurTest(residue, nums, mem);
-            if (res) {
+            var res = recurTest(residue, nums, mem);
+            if (!res) {
                 mem.add(residue);
+            } else {
                 return true;
             }
         }
