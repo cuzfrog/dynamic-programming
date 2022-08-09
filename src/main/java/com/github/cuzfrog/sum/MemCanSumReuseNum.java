@@ -1,4 +1,4 @@
-package com.github.cuzfrog.cansum;
+package com.github.cuzfrog.sum;
 
 import com.carrotsearch.hppc.IntSet;
 import com.carrotsearch.hppc.IntWormSet;

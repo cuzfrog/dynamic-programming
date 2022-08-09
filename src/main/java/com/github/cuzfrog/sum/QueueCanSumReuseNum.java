@@ -1,4 +1,4 @@
-package com.github.cuzfrog.cansum;
+package com.github.cuzfrog.sum;
 
 import com.carrotsearch.hppc.IntArrayDeque;
 import com.carrotsearch.hppc.IntDeque;

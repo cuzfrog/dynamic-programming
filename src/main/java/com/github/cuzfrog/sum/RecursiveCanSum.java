@@ -1,4 +1,4 @@
-package com.github.cuzfrog.cansum;
+package com.github.cuzfrog.sum;
 
 final class RecursiveCanSum implements CanSum {
     @Override
