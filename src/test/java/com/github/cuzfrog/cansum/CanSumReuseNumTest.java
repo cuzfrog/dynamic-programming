@@ -13,7 +13,8 @@ class CanSumReuseNumTest {
     static Stream<CanSumReuseNum> impls() {
         return Stream.of(
                 new RecursiveCanSumReuseNum(),
-                new MemCanSumReuseNum()
+                new MemCanSumReuseNum(),
+                new QueueCanSumReuseNum()
         );
     }
 
