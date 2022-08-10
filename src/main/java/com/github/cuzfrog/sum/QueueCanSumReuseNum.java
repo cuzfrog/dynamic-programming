@@ -9,7 +9,7 @@ final class QueueCanSumReuseNum implements CanSumReuseNum {
         if (targetSum == 0) return true;
         if (targetSum < 0) return false;
 
-        IntDeque queue = new IntArrayDeque();
+        IntDeque queue = new IntArrayDeque(); // it does not matter what collection we choose, it only defines how the tree is traversed.
         queue.addLast(targetSum);
         while (!queue.isEmpty()) {
             var head = queue.removeFirst();
