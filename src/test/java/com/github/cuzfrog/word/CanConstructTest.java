@@ -12,7 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CanConstructTest {
     static Stream<CanConstruct> impls() {
         return Stream.of(
-                new RecursiveCanConstruct()
+                new RecursiveCanConstruct(),
+                new MemCanConstruct()
         );
     }
 
