@@ -12,7 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class BestSumReuseNumTest {
     static Stream<BestSumReuseNum> impls() {
         return Stream.of(
-                new RecursiveBestSumReuseNum()
+                new RecursiveBestSumReuseNum(),
+                new MemBestSumReuseNum()
         );
     }
     @ParameterizedTest
@@ -29,7 +30,10 @@ class BestSumReuseNumTest {
 
         assertThat(impl.test(7, new int[]{7, 3, 4})).containsExactlyInAnyOrder(7);
         assertThat(impl.test(7, new int[]{1, 3, 4})).containsExactlyInAnyOrder(3, 4);
+        if (!(impl instanceof RecursiveBestSumReuseNum)) {
+            assertThat(impl.test(100, new int[]{1, 2, 50})).containsExactlyInAnyOrder(50, 50);
 
+        }
         assertThat(impl.test(7, new int[]{5, 4, 4})).isNull();
 
     }
