@@ -16,7 +16,7 @@ class MatrixPathTest {
                 new GrowMemMatrixPath(),
                 new ReduceRecursiveMatrixPath(),
                 new ReduceMemMatrixPath(),
-                new ArrayMatrixPath()
+                new TableMatrixPath()
         );
     }
 

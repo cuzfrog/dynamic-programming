@@ -1,6 +1,6 @@
 package com.github.cuzfrog.matrixpath;
 
-final class ArrayMatrixPath implements MatrixPath {
+final class TableMatrixPath implements MatrixPath {
     @Override
     public int pathCount(int n) {
         var m = new int[n][n];
