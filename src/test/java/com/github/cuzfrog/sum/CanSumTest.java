@@ -13,7 +13,9 @@ class CanSumTest {
     static Stream<CanSum> impls() {
         return Stream.of(
                 new RecursiveCanSum(),
-                new MemCanSum()
+                new MemCanSum(),
+                new QueueCanSum(),
+                new TableCanSum()
         );
     }
 
@@ -23,16 +25,14 @@ class CanSumTest {
         assertThat(impl.test(3 , new int[]{1, 2})).isTrue();
         assertThat(impl.test(4 , new int[]{1, 2, 1})).isTrue();
         assertThat(impl.test(4 , new int[]{1, 4, 1})).isTrue();
-        assertThat(impl.test(5 , new int[]{1, 2, 1, 2})).isTrue();
-        assertThat(impl.test(6 , new int[]{1, 3, 1, 2})).isTrue();
-        assertThat(impl.test(6 , new int[]{1, 2, 4, 2})).isTrue();
-        assertThat(impl.test(6 , new int[]{1, 2, 2, 2})).isTrue();
+        assertThat(impl.test(5 , new int[]{1, 2})).isTrue();
+        assertThat(impl.test(6 , new int[]{2, 3})).isTrue();
+        assertThat(impl.test(6 , new int[]{3, 4})).isTrue();
+        assertThat(impl.test(6 , new int[]{4, 2})).isTrue();
 
-        assertThat(impl.test(3 , new int[]{1, 1})).isFalse();
-        assertThat(impl.test(4 , new int[]{1, 5, 1})).isFalse();
-        assertThat(impl.test(5 , new int[]{1, 0, 1, 2})).isFalse();
-        assertThat(impl.test(6 , new int[]{1, 7, 1, 2})).isFalse();
-        assertThat(impl.test(6 , new int[]{1, 1, 1, 2})).isFalse();
-        assertThat(impl.test(6 , new int[]{1, 0, 2, 2})).isFalse();
+        assertThat(impl.test(3 , new int[]{4, 5})).isFalse();
+        assertThat(impl.test(4 , new int[]{3})).isFalse();
+        assertThat(impl.test(6 , new int[]{4, 7, 5})).isFalse();
+        assertThat(impl.test(8 , new int[]{3, 9, 6, 7})).isFalse();
     }
 }

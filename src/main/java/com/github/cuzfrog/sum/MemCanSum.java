@@ -6,28 +6,22 @@ import com.carrotsearch.hppc.IntWormSet;
 final class MemCanSum implements CanSum {
     @Override
     public boolean test(int targetSum, int[] nums) {
-        return recurTest(targetSum, new IntBag(nums), new IntWormSet());
+        return recurTest(targetSum, nums, new IntWormSet());
     }
 
-    private static boolean recurTest(int targetSum, IntBag nums, IntSet mem) {
-        if (targetSum < 0) return false;
+    private static boolean recurTest(int targetSum, int[] nums, IntSet mem) {
         if (targetSum == 0) return true;
+        if (targetSum < 0) return false;
         if (mem.contains(targetSum)) {
             return false;
         }
-        for (int i = 0; i < nums.length(); i++) {
-            var num = nums.borrowElem(i);
-            if (num < 0) {
-                continue;
-            }
-
-            var residue = targetSum - num;
+        for (int num : nums) {
+            var residue = targetSum-num;
             var res = recurTest(residue, nums, mem);
-            if (res) {
-                return true;
-            } else {
+            if (!res) {
                 mem.add(residue);
-                nums.returnElem(i);
+            } else {
+                return true;
             }
         }
         return false;

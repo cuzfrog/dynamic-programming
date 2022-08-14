@@ -9,16 +9,16 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class BestSumReuseNumTest {
-    static Stream<BestSumReuseNum> impls() {
+class BestSumTest {
+    static Stream<BestSum> impls() {
         return Stream.of(
-                new RecursiveBestSumReuseNum(),
-                new MemBestSumReuseNum()
+                new RecursiveBestSum(),
+                new MemBestSum()
         );
     }
     @ParameterizedTest
     @MethodSource("impls")
-    void test1(BestSumReuseNum impl) {
+    void test1(BestSum impl) {
         assertThat(impl.test(7, new int[]{7})).containsExactlyInAnyOrder(7);
         assertThat(impl.test(7, new int[]{3, 4})).containsExactlyInAnyOrder(3, 4);
         assertThat(impl.test(7, new int[]{3, 2})).containsExactlyInAnyOrder(3, 2 ,2);
@@ -30,7 +30,7 @@ class BestSumReuseNumTest {
 
         assertThat(impl.test(7, new int[]{7, 3, 4})).containsExactlyInAnyOrder(7);
         assertThat(impl.test(7, new int[]{1, 3, 4})).containsExactlyInAnyOrder(3, 4);
-        if (!(impl instanceof RecursiveBestSumReuseNum)) {
+        if (!(impl instanceof RecursiveBestSum)) {
             assertThat(impl.test(100, new int[]{1, 2, 50})).containsExactlyInAnyOrder(50, 50);
 
         }

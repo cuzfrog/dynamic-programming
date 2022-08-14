@@ -9,18 +9,18 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-final class HowSumReuseNumTest {
+final class HowSumTest {
 
-    static Stream<HowSumReuseNum> impls() {
+    static Stream<HowSum> impls() {
         return Stream.of(
-                new RecursiveHowSumReuseNum(),
-                new MemHowSumReuseNum()
+                new RecursiveHowSum(),
+                new MemHowSum()
         );
     }
 
     @ParameterizedTest
     @MethodSource("impls")
-    void test1(HowSumReuseNum impl) {
+    void test1(HowSum impl) {
         assertThat(impl.test(7, new int[]{3, 4})).containsExactlyInAnyOrder(3,4);
         assertThat(impl.test(7, new int[]{2, 3})).containsExactlyInAnyOrder(2,2,3);
 

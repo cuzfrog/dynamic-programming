@@ -3,7 +3,7 @@ package com.github.cuzfrog.sum;
 import com.carrotsearch.hppc.IntArrayDeque;
 import com.carrotsearch.hppc.IntDeque;
 
-final class QueueCanSumReuseNum implements CanSumReuseNum {
+final class QueueCanSum implements CanSum {
     @Override
     public boolean test(int targetSum, int[] nums) {
         if (targetSum == 0) return true;

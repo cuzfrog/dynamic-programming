@@ -2,7 +2,7 @@ package com.github.cuzfrog.sum;
 
 import com.carrotsearch.hppc.IntArrayList;
 
-final class RecursiveBestSumReuseNum implements BestSumReuseNum {
+final class RecursiveBestSum implements BestSum {
     @Override
     public int[] test(int targetSum, int[] nums) {
         var best = recurTest(targetSum, nums);

@@ -4,7 +4,7 @@ import com.carrotsearch.hppc.IntArrayList;
 import com.carrotsearch.hppc.IntObjectHashMap;
 import com.carrotsearch.hppc.IntObjectMap;
 
-final class MemBestSumReuseNum implements BestSumReuseNum {
+final class MemBestSum implements BestSum {
     @Override
     public int[] test(int targetSum, int[] nums) {
         var best = recurTest(targetSum, nums, new IntObjectHashMap<>());
