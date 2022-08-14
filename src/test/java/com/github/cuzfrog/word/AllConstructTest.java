@@ -14,7 +14,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class AllConstructTest {
     static Stream<AllConstruct> impls() {
         return Stream.of(
-                new RecursiveAllConstruct()
+                new RecursiveAllConstruct(),
+                new MemAllConstruct()
         );
     }
     @ParameterizedTest
