@@ -14,7 +14,8 @@ final class HowSumTest {
     static Stream<HowSum> impls() {
         return Stream.of(
                 new RecursiveHowSum(),
-                new MemHowSum()
+                new MemHowSum(),
+                new TableHowSum()
         );
     }
 

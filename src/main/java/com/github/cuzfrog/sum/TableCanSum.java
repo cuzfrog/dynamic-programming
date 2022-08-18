@@ -7,6 +7,9 @@ final class TableCanSum implements CanSum {
         table[0] = true;
 
         for (int i = 0; i < table.length; i++) {
+            if(!table[i]) {
+                continue;
+            }
             for (int num : nums) {
                 int next;
                 if ((next = i + num) < table.length) {
